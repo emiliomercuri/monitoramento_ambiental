@@ -15,7 +15,7 @@ const double C = 0.0000000876741;
 
 
 /****** WiFi Connection Details *******/
-// const char* ssid = "nome do wi-fo";
+// const char* ssid = "nome do wi-fi";
 // const char* password = "senha do wi-fi";
 
 const char* ssid = "iPhone 14 Emilio";
