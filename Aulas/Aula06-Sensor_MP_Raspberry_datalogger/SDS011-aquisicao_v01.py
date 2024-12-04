@@ -12,14 +12,14 @@ data = datetime.datetime.now().strftime("%Y-%m-%d")
 hora = datetime.datetime.now().strftime("%Y-%m-%d_%H")
 hora_atual = hora
 
-
-if path.exists("/home/pi/Aulas_2024_IoT/Dados/") != True:
-    myCmd = 'mkdir /home/pi/Aulas_2024_IoT/Dados/'
+caminho = '/home/grupo2/aula06'
+if path.exists(caminho+"/Dados/") != True:
+    myCmd = 'mkdir '+caminho+'/Dados/'
     os.system(myCmd)
 
-if path.exists("/home/pi/Aulas_2024_IoT/Dados/serie_temporal_mp.txt") != True:
+if path.exists(caminho+"/Dados/serie_temporal_mp.txt") != True:
 
-    write_to_file_path =  "/home/pi/Aulas_2024_IoT/Dados/serie_temporal_mp.txt";
+    write_to_file_path =  caminho+"/Dados/serie_temporal_mp.txt";
     output_file = open(write_to_file_path, "a");
     output_file.close()
 
@@ -74,7 +74,7 @@ while True:
             #print(type(horario),type(line))
             print(horario+','+str(pm25)+','+str(pm10))
             #print(horario+str(line2))
-            write_to_file_path =  "/home/pi/Aulas_2024_IoT/Dados/serie_temporal_mp.txt";
+            write_to_file_path =  caminho+"/Dados/serie_temporal_mp.txt";
             output_file = open(write_to_file_path,"a")
             output_file.write(horario+','+str(pm25)+','+str(pm10))
             output_file.write('\n')
