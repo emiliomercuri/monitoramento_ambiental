@@ -13,13 +13,13 @@ hora = datetime.datetime.now().strftime("%Y-%m-%d_%H")
 hora_atual = hora
 
 
-if path.exists("/home/lactea/Lactea/Aulas_2024_IoT/Dados/") != True:
-    myCmd = 'mkdir /home/lactea/Lactea/Aulas_2024_IoT/Dados/'
+if path.exists("/home/Aulas_2024_IoT/Dados/") != True:
+    myCmd = 'mkdir /home/Aulas_2024_IoT/Dados/'
     os.system(myCmd)
 
-if path.exists("/home/lactea/Lactea/Aulas_2024_IoT/Dados/serie_temporal_mp.txt") != True:
+if path.exists("/home/Aulas_2024_IoT/Dados/serie_temporal_mp.txt") != True:
 
-    write_to_file_path =  "/home/lactea/Lactea/Aulas_2024_IoT/Dados/serie_temporal_mp.txt";
+    write_to_file_path =  "/home/Aulas_2024_IoT/Dados/serie_temporal_mp.txt";
     output_file = open(write_to_file_path, "a");
     output_file.close()
 
@@ -74,7 +74,7 @@ while True:
             #print(type(horario),type(line))
             print(horario+','+str(pm25)+','+str(pm10))
             #print(horario+str(line2))
-            write_to_file_path =  "/home/lactea/Lactea/Aulas_2024_IoT/Dados/serie_temporal_mp.txt";
+            write_to_file_path =  "/home/Aulas_2024_IoT/Dados/serie_temporal_mp.txt";
             output_file = open(write_to_file_path,"a")
             output_file.write(horario+','+str(pm25)+','+str(pm10))
             output_file.write('\n')
