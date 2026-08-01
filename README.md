@@ -1,4 +1,4 @@
-# Monitoramento Ambiental – Sensores e Microcontroladores
+# Monitoramento Ambiental com Sensores e Microcontroladores
 
 Disciplina ofertada nos seguintes programas da UFPR:
 
