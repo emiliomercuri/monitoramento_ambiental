@@ -7,4 +7,4 @@ Disciplina ofertada nos seguintes programas da UFPR:
 - Programa de Pós-Graduação em Métodos Numéricos em Engenharia (PPGMNE)
 - Graduação da Engenharia Ambiental (GEA)
 
-Professores: Tobias Bleninger, Emilio Mercuri, Rafael Bueno
+Professores: Tobias Bleninger, Emilio Mercuri, Rafael Bueno, José Eduardo Gonçalves 
