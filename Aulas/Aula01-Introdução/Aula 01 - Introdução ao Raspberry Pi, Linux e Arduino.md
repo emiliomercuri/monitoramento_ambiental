@@ -259,3 +259,16 @@ A conversão utilizada é:
 ```text
 1 segundo = 1000 milissegundos
 ```
+
+
+## Acesso ao Raspberry Pi via SSH
+
+Secure Shell (SSH) é um protocolo de rede criptográfico para operação de serviços de rede de forma segura sobre uma rede insegura. O melhor exemplo de aplicação conhecido é para login remoto de utilizadores a sistemas de computadores.
+
+Atividade em sala, utilizar o laptop e fazer acesso via SSH. No Windows usar PowerShell como administrador, também pode ser usado o Terminal do Linux ou Mac:
+
+
+```bash
+ssh usuario@IP
+```
+
