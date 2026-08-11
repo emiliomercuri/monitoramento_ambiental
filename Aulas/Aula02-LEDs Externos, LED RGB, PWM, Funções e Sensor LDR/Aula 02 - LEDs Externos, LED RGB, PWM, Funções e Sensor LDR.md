@@ -94,12 +94,12 @@ micro platformio.ini
 
 ## 2. Exemplo 1 — Dois LEDs externos (branco e azul)
 
-Neste exemplo ligamos **dois LEDs externos** ao Arduino: um branco (pino 8) e um azul (pino 10). Eles piscam de forma **alternada** — quando um acende, o outro apaga.
+Neste exemplo ligamos **dois LEDs externos** ao Arduino: um branco (pino 3) e um azul (pino 7). Eles piscam de forma **alternada** — quando um acende, o outro apaga.
 
 ### Circuito
 
-- LED branco: pino digital **8** → resistor de **200 Ω** → LED → GND
-- LED azul: pino digital **10** → resistor de **200 Ω** → LED → GND
+- LED branco: pino digital **3** → resistor de **220 Ω** → LED → GND
+- LED azul: pino digital **7** → resistor de **220 Ω** → LED → GND
 
 > O resistor limita a corrente e protege o LED e a placa. Sem ele o LED pode queimar.
 
@@ -119,8 +119,8 @@ micro main.cpp
 
 // Tempos em milissegundos
 const unsigned long tempo = 3000;
-const int ledPinBranco = 8;
-const int ledPinAzul = 10;
+const int ledPinBranco = 3;
+const int ledPinAzul = 7;
 
 void setup()
 {
@@ -189,13 +189,13 @@ pio device list
 
 ## 3. Exemplo 2 — LED RGB piscando (vermelho, verde, azul)
 
-Agora usamos um **LED RGB**, que combina três LEDs (vermelho, verde e azul) em um único componente. Cada cor é ligada a um **pino PWM** do Arduino — `~9`, `~10` e `~11` (os pinos marcados com `~`) — o que permite controlar o **brilho** de cada cor.
+Agora usamos um **LED RGB**, que combina três LEDs (vermelho, verde e azul) em um único componente. Cada cor é ligada a um **pino PWM** do Arduino — `~11`, `~6` e `~5` (os pinos marcados com `~`) — o que permite controlar o **brilho** de cada cor.
 
 Aqui o LED pisca em sequência: **vermelho → verde → azul**, cada cor por 2 segundos.
 
 ![Circuito do LED RGB — Exemplos 2 e 3](imagens/circuito-ex2-rgb.svg)
 
-> Cada perna colorida (R, G, B) recebe seu próprio resistor de 200 Ω; a perna do **cátodo comum** vai para o GND. Se o seu LED for de **ânodo comum**, o pino comum vai para o 5 V e a lógica das intensidades se inverte.
+> Cada perna colorida (R, G, B) recebe seu próprio resistor de 220 Ω; a perna do **cátodo comum** vai para o GND. Se o seu LED for de **ânodo comum**, o pino comum vai para o 5 V e a lógica das intensidades se inverte.
 
 Crie o exercício:
 
@@ -212,9 +212,9 @@ Edite o `src/main.cpp`:
 #include <Arduino.h>
 
 const unsigned long tempo = 2000;
-const int ledR = 9;   // pino PWM ~9
-const int ledG = 10;  // pino PWM ~10
-const int ledB = 11;  // pino PWM ~11
+const int ledR = 11;   // pino PWM ~11
+const int ledG = 6;  // pino PWM ~6
+const int ledB = 5;  // pino PWM ~5
 
 void setup()
 {
@@ -287,9 +287,9 @@ micro src/main.cpp
 #include <Arduino.h>
 
 const unsigned long tempo = 2000;
-const int ledR = 9;   // pino PWM ~9
-const int ledG = 10;  // pino PWM ~10
-const int ledB = 11;  // pino PWM ~11
+const int ledR = 11;   // pino PWM ~11
+const int ledG = 6;  // pino PWM ~6
+const int ledB = 5;  // pino PWM ~5
 
 void escolhaCor(int valorR, int valorG, int valorB)
 {
@@ -352,9 +352,9 @@ O LDR é ligado em um **divisor de tensão** e lido no pino analógico `A5`:
 #include <Arduino.h>
 
 const unsigned long tempo = 1000;
-const int ledR = 9;      // pino PWM ~9
-const int ledG = 10;     // pino PWM ~10
-const int ledB = 11;     // pino PWM ~11
+const int ledR = 11;      // pino PWM ~11
+const int ledG = 6;     // pino PWM ~6
+const int ledB = 5;     // pino PWM ~5
 const int pinLDR = A5;   // entrada analógica (LDR)
 
 void escolhaCor(int valorR, int valorG, int valorB)
@@ -453,7 +453,7 @@ Desafio: usando tudo que vimos na aula, montar e programar um **semáforo** em q
 
 ### Montagem
 
-- **LED RGB (farol):** ligado como no Exemplo 4 — pinos PWM `~9`, `~10` e `~11`, cada cor com seu resistor de 200 Ω e o cátodo comum no GND.
+- **LED RGB (farol):** ligado como no Exemplo 4 — pinos PWM `~11`, `~6` e `~5`, cada cor com seu resistor de 220 Ω e o cátodo comum no GND.
 - **LDR:** o mesmo divisor de tensão do Exemplo 4, lido em `A5`.
 - **Botão:** um terminal no **pino 2** e o outro no **GND**. Usamos `INPUT_PULLUP`, então o pino fica em `HIGH` solto e vai para `LOW` quando o botão é pressionado — **sem precisar de resistor externo**.
 
