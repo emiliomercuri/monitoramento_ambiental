@@ -34,7 +34,7 @@ ssh nome@ip
 Senha:
 
 ```text
-iotempire
+iot***
 ```
 
 Crie a pasta do primeiro exercício e inicialize o projeto PlatformIO:
