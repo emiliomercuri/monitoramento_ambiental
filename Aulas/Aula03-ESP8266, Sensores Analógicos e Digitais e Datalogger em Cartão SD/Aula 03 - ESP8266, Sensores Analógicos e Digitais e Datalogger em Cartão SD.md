@@ -475,9 +475,9 @@ pio device monitor
 
 Desafio: repetir o sistema do Exemplo 3, mas **substituir o LED por uma lâmpada de 110 V**, controlada por um **módulo relé**. 
 
-### Segurança em primeiro lugar
+### Atenção
 
-> **A montagem da parte de 110 V é feita apenas com a bancada desenergizada e sob supervisão do professor.**
+> **A montagem da parte de 110 V é feita apenas com a bancada desenergizada e muito cuidado!**
 >
 > - Nunca conecte ou desconecte fios com o cabo na tomada.
 > - Todo o lado de alta tensão do relé deve ficar **isolado** (fita isolante ou terminais cobertos) — nada de fio descascado na protoboard.
