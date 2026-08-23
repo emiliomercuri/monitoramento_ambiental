@@ -6,7 +6,7 @@ Agora você pode adaptar os códigos que estão no github e fazer a parte inicia
 
 ## Ligação Física do SDS011
 
-Veja na imagem:
+Veja a ligação dos jumpers na imagem:
 
 <img src="figuras/ligacao-sds011-diagrama.png" alt="Modelo publicador-subscritor MQTT" width="700">
 
@@ -17,5 +17,12 @@ Veja na imagem:
 
 ## Ligação Física do PMS7003
 
+Para variar vamos usar o NodeMCU.
 
+Veja a ligação dos jumpers na imagem:
 
+<img src="figuras/ligacao-pms7003-diagrama.png" alt="Modelo publicador-subscritor MQTT" width="700">
+
+- VCC → 3V (azul) 
+- TXD → D7/GPIO13 (cinza claro) 
+- GND → G (cinza escuro)
