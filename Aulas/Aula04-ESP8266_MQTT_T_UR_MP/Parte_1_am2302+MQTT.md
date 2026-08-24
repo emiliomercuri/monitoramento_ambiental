@@ -88,7 +88,7 @@ Ou de acordo com a figura abaixo:
 
 ## 3) Adaptando os arquivos para o seu servidor MQTT
 
-Cara Raspberry Pi gera uma rede Wi-Fi que tem o mesmo nome do usuário (músico de uma banda famosa de rock inglês clássico). O professor instalou em cada Raspberry Pi um servidor Mosquitto que tem o IP do Wi-Fi gerado por cada Raspberry.
+Cada Raspberry Pi gera uma rede Wi-Fi que tem o mesmo nome do usuário (músico de uma banda famosa de rock inglês clássico). O professor instalou em cada Raspberry Pi um servidor Mosquitto que tem o IP do Wi-Fi gerado por cada Raspberry.
 
 Você precisará adaptar o código `main.cpp` para que ele envie os dados via MQTT para o seu servidor MQTT.
 
