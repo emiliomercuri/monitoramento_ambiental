@@ -67,7 +67,7 @@ cd monitoramento_ambiental
 Agora selecione somente a pasta desejada. Como o caminho possui espaços e vírgulas, coloque-o entre aspas:
 
 ```
-git sparse-checkout set "Aulas/Aula04-ESP8266_MQTT_T_UR_MP/codes/am2302
+git sparse-checkout set "Aulas/Aula04-ESP8266_MQTT_T_UR_MP/codes pio/am2302"
 ```
 
 Usando o `micro` inspecione os arquivos que você baixou. Veja os arquivos `platformio.ini` e `main.cpp`. Copie o código deles no ChatGPT e pergunte o que eles fazem, discuta em aula com os colegas.
