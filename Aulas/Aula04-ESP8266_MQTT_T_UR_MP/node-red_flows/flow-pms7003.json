@@ -1,0 +1,323 @@
+[
+    {
+        "id": "b8c620db2066a2b4",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3de9435ad810df71",
+        "type": "mqtt in",
+        "z": "b8c620db2066a2b4",
+        "name": "",
+        "topic": "sensores/pms7003/ESP-1AFF98",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "3996cfccef6bf90c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 350,
+        "y": 80,
+        "wires": [
+            [
+                "bb0d8462c26ed051",
+                "6b1e7a9d6eaaddd4",
+                "97a8d3a537952576"
+            ]
+        ]
+    },
+    {
+        "id": "bb0d8462c26ed051",
+        "type": "debug",
+        "z": "b8c620db2066a2b4",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "037f26bf245cd00d",
+        "type": "inject",
+        "z": "b8c620db2066a2b4",
+        "name": "logrotate trigger",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.01",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 560,
+        "wires": [
+            [
+                "5a12ec84d6dbf4ad"
+            ]
+        ]
+    },
+    {
+        "id": "80df47bbf4eb9480",
+        "type": "exec",
+        "z": "b8c620db2066a2b4",
+        "command": "mv",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 630,
+        "y": 560,
+        "wires": [
+            [
+                "c125ff856fd811a6"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "c125ff856fd811a6",
+        "type": "change",
+        "z": "b8c620db2066a2b4",
+        "name": "reset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5a12ec84d6dbf4ad",
+        "type": "change",
+        "z": "b8c620db2066a2b4",
+        "name": "from-to",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "\"/home/jones/iot/data/pms/mp.json /home/jones/iot/data/pms/mp.json-\" & $replace($now(), \":\", \"-\")",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 560,
+        "wires": [
+            [
+                "80df47bbf4eb9480"
+            ]
+        ]
+    },
+    {
+        "id": "6b1e7a9d6eaaddd4",
+        "type": "join",
+        "z": "b8c620db2066a2b4",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": true,
+        "accumulate": true,
+        "timeout": "",
+        "count": "1",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 250,
+        "y": 340,
+        "wires": [
+            [
+                "ca84d147d56b173f"
+            ]
+        ]
+    },
+    {
+        "id": "a10903232ded2b16",
+        "type": "debug",
+        "z": "b8c620db2066a2b4",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "ca84d147d56b173f",
+        "type": "function",
+        "z": "b8c620db2066a2b4",
+        "name": "function 2",
+        "func": "var t = new Date();\nvar dt = t.toLocaleDateString() + ' ' + t.toLocaleTimeString();\n//var cpp = msg.payload['sensores/alphasense/no2'];\n//var tmp = msg.payload['sensores/alphasense/ox'];\nvar mp = msg.payload['sensores/pms7003/ESP-247FE2'];\n//msg.payload = { time : dt, no2 : cpp, ox : tmp, pms : hum};\nmsg.payload = { time : dt, pms : mp};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 360,
+        "wires": [
+            [
+                "4d5d386457838b89"
+            ]
+        ]
+    },
+    {
+        "id": "4d5d386457838b89",
+        "type": "json",
+        "z": "b8c620db2066a2b4",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 590,
+        "y": 360,
+        "wires": [
+            [
+                "a10903232ded2b16",
+                "47719a4e026af52f"
+            ]
+        ]
+    },
+    {
+        "id": "47719a4e026af52f",
+        "type": "file",
+        "z": "b8c620db2066a2b4",
+        "name": "",
+        "filename": "/home/jones/iot/data/pms/mp.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 720,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "97a8d3a537952576",
+        "type": "influxdb out",
+        "z": "b8c620db2066a2b4",
+        "influxdb": "21c27491d3009bb9",
+        "name": "",
+        "measurement": "pms7003",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "lactea",
+        "bucket": "sensordata",
+        "x": 890,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "3996cfccef6bf90c",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "21c27491d3009bb9",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": 8086,
+        "protocol": "http",
+        "database": "database",
+        "name": "",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://localhost:8086",
+        "timeout": 10,
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "a5624b1be7179c3c",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-influxdb": "0.7.0"
+        }
+    }
+]
