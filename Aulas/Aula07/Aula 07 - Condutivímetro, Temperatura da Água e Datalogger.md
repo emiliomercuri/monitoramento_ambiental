@@ -84,6 +84,7 @@ Todos os módulos funcionam em **3,3 V**. Para não encher o Wemos de fios, use 
 > **Atenção:** a alimentação do módulo SD utilizado aqui (sem regulador) funciona em `3V3`. Muitos módulos no mercado operam em 5 V, como o utilizado na Aula 03. 
 
 ---
+URL=https://raw.githubusercontent.com/emiliomercuri/monitoramento_ambiental/main/Aulas/Aula07/condutivimetro
 
 ## 3. Código completo — o datalogger
 
