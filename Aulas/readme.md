@@ -1,1 +1,1 @@
-Material usado nas aulas
+Material didático usado nas aulas, códigos e teoria
