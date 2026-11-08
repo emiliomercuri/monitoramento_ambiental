@@ -6,4 +6,4 @@ Serão usados sensores de temperatura e condutividade e as ESPs enviarão os dad
 A proposta é variar a inclinação do canal para verificar a influência no coeficiente de dispersão $D_L$. 
 
 <img src="IMG_5572.png" alt="Sensor" width="400">
-Canal, sensores, professor e discentes realizando as medições
+Canal, sensores, professores e discentes realizando as medições
