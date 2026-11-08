@@ -8,9 +8,9 @@
 // ======================================================
 // WI-FI / MQTT (mesma infraestrutura do projeto SCD41)
 // ======================================================
-const char* WIFI_SSID = "star";
+const char* WIFI_SSID = "mp-livre";
 const char* WIFI_PASS = "iotempire";
-const char* MQTT_HOST = "192.168.4.1";
+const char* MQTT_HOST = "192.168.6.1";
 const uint16_t MQTT_PORT = 1883;
 const char* MQTT_TOPIC_BASE = "sensores/tds";
 
