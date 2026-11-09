@@ -6,5 +6,5 @@ Serão usados sensores de temperatura e condutividade e os microcontroladores ES
 A proposta é variar a inclinação do canal para verificar a influência no coeficiente de dispersão $D_L$. 
 
 
-<!-- <img src="IMG_5572.png" alt="Sensor" width="400"> -->
+<img src="IMG_5572.png" alt="Sensor" width="400"> 
 Canal, sensores, professores e discentes realizando as medições
