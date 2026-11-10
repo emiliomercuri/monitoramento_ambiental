@@ -8,3 +8,7 @@ A proposta é variar a inclinação do canal para verificar a influência no coe
 
 <img src="IMG_5572.png" alt="Sensor" width="400"> 
 Canal, sensores, professores e discentes realizando as medições
+
+
+<img src="canal.png" alt="Sensor" width="600"> 
+Esquema Técnico de Canal Inclinado
